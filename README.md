@@ -35,7 +35,7 @@ Log4j漏洞复现及原理
 </project>
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+
 
 在resource目录下定义了log4j2.xml，表示log4j2的日志配置信息
 
@@ -58,7 +58,7 @@ Log4j漏洞复现及原理
 </Configuration>
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+
 
 接下来是攻击者的自定义类EvilObj，在类加载时执行static静态代码块
 
@@ -86,7 +86,7 @@ public class EvilObj implements ObjectFactory {
 }
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+
 
 攻击者也实现了RMIServer（相当于注册中心）
 
@@ -120,7 +120,7 @@ public class RMIServer {
 }
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+
 
 
 
@@ -149,11 +149,11 @@ public class Log4j2Test {
 }
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+
 
 结果在服务端的控制台中执行EvilObj类加载的输出
 
-![img](https://img-blog.csdnimg.cn/b3609b6f40c047fca37d5a48a0f03694.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2hlcmlzaGx4OTg=,size_20,color_FFFFFF,t_70,g_se,x_16)![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+![img](https://img-blog.csdnimg.cn/b3609b6f40c047fca37d5a48a0f03694.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2hlcmlzaGx4OTg=,size_20,color_FFFFFF,t_70,g_se,x_16)
 
 #  3.漏洞原理分析
 
